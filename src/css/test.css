@@ -1,0 +1,9 @@
+div#place {
+    width: 30%;
+    height: 300px;
+    display: block;
+    position: relative;
+}
+video {
+    object-fit: cover;
+}
