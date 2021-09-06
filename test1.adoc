@@ -4,3 +4,20 @@
 2. Реклама
 3. Акции дистрибьютеров
 4. Внутренние акции
+
+[plantuml, mindmap1, png]
+----
+(<b>Хранилище данных</b>\nSQL) as DWH
+( Данные первичных продаж) as first
+( Данные вторичных продаж) as second
+(Остатки) as stock
+(Маркетинг, реклама) as ad
+[OLAP\SSAS] as OLAP
+[Power BI/Excel] as BI
+ad --> DWH : ETL (Python)
+stock --> DWH : ETL (SSIS)
+DWH <-- first : ETL (SSIS)
+DWH <-- second : ETL (Python)
+DWH <-> OLAP
+OLAP -> BI
+----
